@@ -1,0 +1,38 @@
+.overlay {
+	position: 'absolute';
+	top: 0;
+	left: 0;
+	height: '100%';
+	width: '100%';
+	background-color: 'rgba(0, 0, 0, 0.6)';  /* dark overlay */
+	display: 'flex';
+	justify-content: 'center';
+	align-items: 'center';
+	flex-direction: 'column';
+	text-align: 'center';
+	padding: '0 20px';
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px); /* start lower */
+  transition: opacity 1s ease-out, transform 2s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* move up to natural position */
+}
